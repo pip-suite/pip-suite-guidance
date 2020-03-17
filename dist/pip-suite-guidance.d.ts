@@ -134,6 +134,20 @@ export class TipStatus {
 }
 
 
+function pipGuideDataConfig(pipRestProvider: pip.rest.IRestProvider): void;
+
+
+function configQuoteResources(pipRestProvider: pip.rest.IRestProvider): void;
+
+function pipTipDataConfig(pipRestProvider: pip.rest.IRestProvider): void;
+
+export interface IQuotesService {
+    filterQuotes(data: any[], topic: string): any[];
+    showQuotes(quotes: any[], ln: string, $event?: any): void;
+    waitUserTipsQuotes(tips: any[], quotes: any[], ln: string): void;
+}
+
+
 export interface IIntroGuidanceService {
     showReleaseGuidance(filter: string, successCallback?: () => void, errorCallback?: () => void): void;
     showIntroGuidance(filter: string, successCallback?: () => void, errorCallback?: () => void): void;
@@ -143,20 +157,6 @@ export interface IIntroGuidanceService {
 
 
 
-
-export interface IQuotesService {
-    filterQuotes(data: any[], topic: string): any[];
-    showQuotes(quotes: any[], ln: string, $event?: any): void;
-    waitUserTipsQuotes(tips: any[], quotes: any[], ln: string): void;
-}
-
-
-function pipGuideDataConfig(pipRestProvider: pip.rest.IRestProvider): void;
-
-
-function configQuoteResources(pipRestProvider: pip.rest.IRestProvider): void;
-
-function pipTipDataConfig(pipRestProvider: pip.rest.IRestProvider): void;
 
 export interface ITipsService {
     filterTips(data: any[], topic: string): any[];
